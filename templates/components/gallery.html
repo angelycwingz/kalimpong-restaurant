@@ -67,4 +67,111 @@
         </p>
 
     </div>
+
+    
+    <!-- Gallery lightbox -->
+    <dialog
+        id="gallery-lightbox"
+        aria-label="Gallery image viewer"
+        class="fixed inset-0 m-0 h-dvh w-screen max-h-none max-w-none overflow-hidden border-0 bg-black/95 p-0 text-white backdrop:bg-black/80 backdrop:backdrop-blur-sm"
+    >
+        <div class="flex h-full flex-col">
+
+            <!-- Header: caption and close button -->
+            <div class="flex shrink-0 items-center justify-between gap-4 px-4 py-4 sm:px-8 sm:py-5">
+                <div class="min-w-0">
+                    <p
+                        id="gallery-lightbox-caption"
+                        class="truncate font-heading text-xl font-medium sm:text-2xl"
+                    ></p>
+
+                    <p
+                        id="gallery-lightbox-counter"
+                        aria-live="polite"
+                        class="mt-1 text-sm text-white/60"
+                    ></p>
+                </div>
+
+                <button
+                    type="button"
+                    data-gallery-close
+                    aria-label="Close image viewer"
+                    class="grid size-11 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        class="size-5"
+                        aria-hidden="true"
+                    >
+                        <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Main image and navigation -->
+            <div data-gallery-stage class="flex min-h-0 flex-1 items-center justify-center gap-1 px-1 sm:gap-4 sm:px-6">
+
+                <button
+                    type="button"
+                    data-gallery-prev
+                    aria-label="Previous image"
+                    class="grid size-10 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:size-12"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        class="size-5"
+                        aria-hidden="true"
+                    >
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </button>
+
+                <figure class="flex h-full min-h-0 min-w-0 flex-1 items-center justify-center">
+                    <img
+                        id="gallery-lightbox-image"
+                        src=""
+                        alt=""
+                        decoding="async"
+                        class="max-h-[calc(100dvh-8rem)] max-w-full object-contain"
+                    >
+                </figure>
+
+                <button
+                    type="button"
+                    data-gallery-next
+                    aria-label="Next image"
+                    class="grid size-10 shrink-0 place-items-center rounded-full border border-white/20 bg-white/10 transition hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:size-12"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        class="size-5"
+                        aria-hidden="true"
+                    >
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </button>
+
+            </div>
+
+            <!-- Keyboard navigation hint -->
+            <p
+                id="gallery-lightbox-help"
+                class="shrink-0 px-4 pb-4 pt-2 text-center text-xs text-white/50 sm:pb-6"
+            >
+                Use ← and → to browse · Press Esc to close
+            </p>
+
+        </div>
+    </dialog>
+    <!-- End gallery lightbox -->
+
 </section>

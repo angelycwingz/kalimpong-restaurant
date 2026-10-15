@@ -1,8 +1,13 @@
-
 {% load static %}
 
-<article
-    class="group relative h-full min-h-55 md:min-h-0 overflow-hidden rounded-2xl bg-brown"
+<button
+    type="button"
+    data-gallery-trigger
+    data-gallery-src="{% static image %}"
+    data-gallery-alt="{{ alt }}"
+    data-gallery-caption="{{ label }}"
+    aria-label="View larger image: {{ label }}"
+    class="group relative block h-full min-h-55 w-full md:min-h-0 cursor-zoom-in overflow-hidden rounded-2xl bg-brown text-left focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
 >
     <img
         src="{% static image %}"
@@ -23,4 +28,4 @@
             {{ label }}
         </p>
     </div>
-</article>
+</button>
