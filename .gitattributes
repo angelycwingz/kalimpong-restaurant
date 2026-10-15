@@ -1,0 +1,3 @@
+
+# Keep shell scripts compatible with Linux deployments
+*.sh text eol=lf

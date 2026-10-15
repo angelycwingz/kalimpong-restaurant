@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Kalimpong Restaurant | Tibetan Cuisine in McLeod Ganj
+{% endblock title %}
+
+{% block structured_data %}
+    {% include "components/restaurant_schema.html" %}
+{% endblock %}
+
+{% block content %}
+
+    {% include "components/hero.html" %}
+
+    {% include "components/story.html"%}
+
+    {% include "components/signature_dishes.html" %}
+
+    {% include "components/gallery.html" %}
+
+    {% include "components/visit_us.html" %}
+
+    {% include "components/footer.html" %}
+
+{% endblock content %}

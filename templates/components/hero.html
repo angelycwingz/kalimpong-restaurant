@@ -1,0 +1,122 @@
+
+{% load static %}
+
+<section
+    id="hero"
+    aria-labelledby="hero-title"
+    class="relative isolate flex min-h-svh overflow-hidden bg-brown text-white"
+>
+     <!-- Layer 1: Himalayan background photograph -->
+
+    <picture class="absolute inset-0 -z-20 h-full w-full">
+
+        <!-- Download the portrait crop on mobile -->
+        <source
+            media="(max-width: 767px)"
+            srcset="{% static 'images/hero/hero-mountains-mobile.webp' %}"
+            type="image/webp"
+        >
+
+        <!-- Keep the panoramic version on desktop -->
+        <img
+            data-hero-background
+            src="{% static 'images/hero/hero-mountains-optimized.webp' %}"
+            alt="Snow-covered Himalayan mountain peaks near Dharamshala"
+            fetchpriority="high"
+            decoding="async"
+            class="absolute inset-0 h-full w-full object-cover object-center"
+        >
+
+    </picture>
+
+
+    <!-- Layer 2: Dark gradients improve text readability -->
+    <div
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 bg-linear-to-r from-brown/90 via-brown/55 to-brown/10"
+    ></div>
+
+    <div
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 bg-linear-to-t from-brown/70 via-transparent to-brown/20"
+    ></div>
+
+    <!-- Layer 3: Main hero content -->
+    <div
+        class="mx-auto flex w-full max-w-7xl items-center px-6 pb-24 pt-32 md:px-8 lg:pb-32"
+    >
+        <div class="max-w-2xl">
+
+            <!-- Small Tibetan-inspired color accent -->
+            <div
+                aria-hidden="true"
+                class="mb-7 flex items-center gap-1.5"
+                data-hero-reveal
+            >
+                <span class="h-1.5 w-7 -skew-x-12 bg-sky-500"></span>
+                <span class="h-1.5 w-7 -skew-x-12 bg-white"></span>
+                <span class="h-1.5 w-7 -skew-x-12 bg-red-500"></span>
+                <span class="h-1.5 w-7 -skew-x-12 bg-green-600"></span>
+                <span class="h-1.5 w-7 -skew-x-12 bg-yellow-400"></span>
+            </div>
+
+            <p data-hero-reveal class="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-secondary sm:text-sm">
+                Authentic Tibetan Cuisine
+            </p>
+
+            <h1
+                id="hero-title"
+                class="font-heading text-5xl font-medium leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
+                data-hero-reveal
+            >
+                Kalimpong
+                <span class="mt-2 block italic text-secondary">
+                    Restaurant
+                </span>
+            </h1>
+
+            <p data-hero-lcp class="mt-7 max-w-lg text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
+                A cozy Tibetan café in the heart of McLeod Ganj,
+                serving comforting food with warmth and love.
+            </p>
+
+            <!-- Layer 4: Calls to action -->
+            <div data-hero-reveal class="mt-9 flex flex-col gap-3 sm:flex-row">
+
+                {% include "components/button.html" with href="#menu" label="Explore the Menu" variant="primary" only %}
+
+                {% include "components/button.html" with href="https://www.google.com/maps/search/?api=1&query=Kalimpong+Restaurant+McLeod+Ganj+Dharamshala" label="Get Directions" variant="secondary" target="_blank" only %}
+
+            </div>
+
+            <p data-hero-reveal class="mt-7 text-sm text-white/75">
+                McLeod Ganj · Dharamshala, Himachal Pradesh
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Layer 5: Scroll prompt -->
+    <a
+        href="#story"
+        class="absolute bottom-12 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/85 transition hover:text-secondary"
+        aria-label="Scroll to discover our story"
+    >
+        <span data-hero-scroll>Discover</span>
+        <span data-scroll-arrow class="text-xl" aria-hidden="true">↓</span>
+    </a>
+
+    <!-- Layer 6: Mountain-shaped transition into the cream section -->
+    <svg
+        class="absolute inset-x-0 bottom-0 z-10 h-10 w-full text-background sm:h-14"
+        viewBox="0 0 1440 90"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+    >
+        <path
+            fill="currentColor"
+            d="M0 65 L100 50 L170 65 L260 42 L340 61 L445 25 L530 54 L620 34 L700 63 L800 20 L885 56 L980 37 L1070 59 L1170 26 L1260 57 L1350 40 L1440 58 L1440 90 L0 90 Z"
+        />
+    </svg>
+
+</section>

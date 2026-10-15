@@ -4,3 +4,16 @@ __pycache__/
 db.sqlite3
 media/
 .vscode/
+assets_reference/
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Collected production static files
+staticfiles/
+
+# Logs
+*.log

@@ -1,0 +1,149 @@
+
+{% load static %}
+
+<section
+    id="location"
+    aria-labelledby="location-title"
+    class="bg-background py-20 text-text sm:py-24 lg:py-28"
+>
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+
+        <!-- Section heading -->
+        <div class="max-w-2xl">
+            <p class="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+                Your Himalayan Stop
+            </p>
+
+            <h2
+                id="location-title"
+                class="font-heading text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl"
+            >
+                Come Find Us
+                <span class="italic text-primary">in the Hills.</span>
+            </h2>
+
+            <p class="mt-5 max-w-xl text-base leading-7 text-brown/80">
+                Exploring McLeod Ganj? Stop by Kalimpong Restaurant
+                for a comforting meal in a colourful Tibetan-inspired setting.
+            </p>
+        </div>
+
+        <!-- Location details and map -->
+        <div class="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+
+            <!-- Left: practical information -->
+            <div class="flex flex-col">
+
+                <!-- Address -->
+                <div class="border-b border-primary/15 pb-6">
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                        Find the Restaurant
+                    </p>
+
+                    <address class="mt-3 not-italic text-base leading-7 text-brown">
+                        68QF+GQP, Tipa Road,<br>
+                        McLeod Ganj, Dharamshala,<br>
+                        Himachal Pradesh 176215
+                    </address>
+
+                    <a
+                        href="https://maps.google.com/maps?q=Kalimpong%20Restaurant%2068QF%2BGQP%2C%20Tipa%20Road%2C%20McLeod%20Ganj%2C%20Dharamshala%2C%20Himachal%20Pradesh%20176215"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-secondary"
+                    >
+                        Get Directions
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+                <!-- Opening hours -->
+                <div class="border-b border-primary/15 py-6">
+
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                        Opening Hours
+                    </p>
+
+                    <div class="mt-4 space-y-3 text-sm">
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Monday</span>
+                            <span class="font-medium">11 AM – 10 PM</span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Tuesday</span>
+                            <span class="font-medium">11 AM – 10 PM</span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Wednesday</span>
+                            <span class="font-semibold text-primary">Closed</span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Thursday</span>
+                            <span class="font-medium">11 AM – 10 PM</span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Friday</span>
+                            <span class="font-medium">11 AM – 10 PM</span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Saturday</span>
+                            <span class="font-medium">11 AM – 10 PM</span>
+                        </div>
+
+                        <div class="flex items-center justify-between gap-4">
+                            <span class="text-brown/80">Sunday</span>
+                            <span class="font-medium">11 AM – 10 PM</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Phone and visitor information -->
+                <div class="py-6">
+
+                    <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                        Get in Touch
+                    </p>
+
+                    <a
+                        href="tel:+919816743703"
+                        class="mt-3 inline-block font-heading text-2xl font-semibold text-primary transition-colors hover:text-secondary"
+                    >
+                        098167 43703
+                    </a>
+
+                    <p class="mt-2 text-sm leading-6 text-brown/80">
+                        Vegetarian options available.
+                        Reservations are not accepted.
+                    </p>
+
+                </div>
+
+                <!-- Main CTA -->
+                {% include "components/button.html" with href="https://maps.google.com/maps?q=Kalimpong%20Restaurant%2068QF%2BGQP%2C%20Tipa%20Road%2C%20McLeod%20Ganj%2C%20Dharamshala%2C%20Himachal%20Pradesh%20176215" label="Plan Your Visit" variant="primary" target="_blank" only %}
+
+            </div>
+
+            <!-- Right: embedded Google Maps -->
+            <div class="relative min-h-90 overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-lg sm:min-h-120">
+
+                <iframe
+                    title="Map showing the location of Kalimpong Restaurant in McLeod Ganj"
+                    src="https://maps.google.com/maps?q=Kalimpong%20Restaurant%2068QF%2BGQP%2C%20Tipa%20Road%2C%20McLeod%20Ganj%2C%20Dharamshala%2C%20Himachal%20Pradesh%20176215&amp;z=15&amp;output=embed"
+                    class="absolute inset-0 h-full w-full border-0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                ></iframe>
+
+            </div>
+
+        </div>
+    </div>
+</section>

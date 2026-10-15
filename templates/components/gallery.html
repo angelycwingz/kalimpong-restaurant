@@ -1,0 +1,70 @@
+
+{% load static %}
+
+<section
+    id="gallery"
+    aria-labelledby="gallery-title"
+    class="bg-[#F1EAE0] py-20 text-text sm:py-24 lg:py-28"
+>
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+
+        <!-- Section introduction -->
+        <div data-reveal class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+
+            <div class="max-w-2xl">
+
+                <p class="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+                    A Glimpse Inside
+                </p>
+
+                <h2
+                    id="gallery-title"
+                    class="font-heading text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl"
+                >
+                    More Than a Meal.
+                    <span class="block italic text-primary">
+                        A Little Himalayan Warmth.
+                    </span>
+                </h2>
+
+            </div>
+
+            <p class="max-w-sm text-sm leading-7 text-brown/80">
+                From colourful Tibetan details to comforting plates
+                of food, take a closer look at Kalimpong Restaurant.
+            </p>
+
+        </div>
+
+        <!-- Editorial-style gallery grid -->
+        <div data-reveal-group class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:auto-rows-47.5 md:grid-cols-4 lg:mt-14">
+
+            <!-- Large feature image -->
+            <div class="min-h-80 sm:col-span-2 md:row-span-2 md:min-h-0 md:h-full flex flex-col">
+                {% include "components/gallery_card.html" with image="images/gallery/restaurant-interior-wide.jpeg" alt="The colourful interior of Kalimpong Restaurant with warm lights and dining tables" label="Inside Kalimpong" only %}
+            </div>
+
+            <div class="min-h-55 md:min-h-0 md:h-full flex flex-col">
+                {% include "components/gallery_card.html" with image="images/gallery/restaurant-sign.jpeg" alt="The illuminated Kalimpong Restaurant sign" label="Our Sign" only %}
+            </div>
+
+            <div class="min-h-55 md:min-h-0 md:h-full flex flex-col">
+                {% include "components/gallery_card.html" with image="images/gallery/from-kitchen.jpg" alt="Tibetan momos served on a plate" label="From Our Kitchen" only %}
+            </div>
+
+            <div class="min-h-55 md:min-h-0 md:h-full flex flex-col">
+                {% include "components/gallery_card.html" with image="images/gallery/restaurant-exterior.jpg" alt="The exterior entrance of Kalimpong Restaurant" label="Find Our Corner" only %}
+            </div>
+
+            <div class="min-h-55 md:min-h-0 md:h-full flex flex-col">
+                {% include "components/gallery_card.html" with image="images/gallery/happiness-bowl.jpg" alt="A bowl of hearty Tibetan thukpa" label="Comfort in a Bowl" only %}
+            </div>
+
+        </div>
+
+        <p class="mt-7 text-center text-xs leading-6 text-brown/75">
+            Photographs of the restaurant and its food.
+        </p>
+
+    </div>
+</section>

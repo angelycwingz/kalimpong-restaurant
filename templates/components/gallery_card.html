@@ -1,0 +1,26 @@
+
+{% load static %}
+
+<article
+    class="group relative h-full min-h-55 md:min-h-0 overflow-hidden rounded-2xl bg-brown"
+>
+    <img
+        src="{% static image %}"
+        alt="{{ alt }}"
+        loading="lazy"
+        decoding="async"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+    >
+
+    <!-- Gradient keeps the caption readable -->
+    <div
+        aria-hidden="true"
+        class="absolute inset-0 bg-linear-to-t from-brown/85 via-brown/10 to-transparent"
+    ></div>
+
+    <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+        <p class="font-heading text-2xl font-semibold text-white">
+            {{ label }}
+        </p>
+    </div>
+</article>

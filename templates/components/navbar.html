@@ -1,0 +1,100 @@
+<nav
+    id="site-navbar"
+    class="site-navbar fixed top-0 left-0 w-full z-50 text-white"
+>
+    <div class="mx-auto max-w-7xl flex items-center justify-between px-8 py-5">
+
+        <!--Logo-->
+        {% include "components/brand.html" with variant="navbar" only %}
+
+        <!--Links-->
+        <ul class="hidden md:flex items-center gap-10">
+            <li>
+                <a href="#hero"
+                class="nav-link text-sm font-medium text-white/85 transition-colors duration-400 hover:text-secondary">
+                Home</a>
+            </li>
+            <li>
+                <a href="#story"
+                class="nav-link text-sm font-medium text-white/85 transition-colors duration-400 hover:text-secondary">
+                Our Story</a>
+            </li>
+            <li>
+                <a href="#menu"
+                class="nav-link text-sm font-medium text-white/85 transition-colors duration-400 hover:text-secondary">
+                Menu</a>
+            </li>
+            <li>
+                <a href="#gallery"
+                class="nav-link text-sm font-medium text-white/85 transition-colors duration-400 hover:text-secondary">
+                Gallery</a>
+            </li>
+            <li>
+                <a href="#location"
+                class="nav-link text-sm font-medium text-white/85 transition-colors duration-400 hover:text-secondary">
+                Location</a>
+            </li>
+        </ul>
+
+        <!--Button-->
+        <div class="hidden md:block">
+            {% include "components/button.html" with href="https://maps.google.com/maps?q=Kalimpong%20Restaurant%2068QF%2BGQP%2C%20Tipa%20Road%2C%20McLeod%20Ganj%2C%20Dharamshala%2C%20Himachal%20Pradesh%20176215" label="Directions" variant="primary" target="_blank" only %}
+        </div>
+
+        <!--Mobile Hamburger Button-->
+        <button
+            id="mobile-menu-button"
+            type="button"
+            class="mobile-menu-toggle inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary md:hidden"
+            aria-label="Open navigation menu"
+            aria-controls="mobile-navigation"
+            aria-expanded="false"
+        >
+            <svg
+                viewBox="0 0 24 24"
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                aria-hidden="true"
+            >
+                <path d="M4 7h16M4 12h16M4 17h16"/>
+            </svg>
+        </button>
+
+    </div>
+
+
+    <div
+        id="mobile-navigation"
+        class="hidden border-t border-primary/10 bg-background/95 px-6 py-5 text-brown shadow-lg backdrop-blur-md md:hidden"
+    >
+        <nav aria-label="Mobile navigation">
+            <div class="mx-auto max-w-7xl space-y-4">
+
+                <a href="#hero" class="mobile-nav-link block py-1 text-sm font-medium transition-colors hover:text-primary">
+                    Home
+                </a>
+
+                <a href="#story" class="mobile-nav-link block py-1 text-sm font-medium transition-colors hover:text-primary">
+                    Our Story
+                </a>
+
+                <a href="#menu" class="mobile-nav-link block py-1 text-sm font-medium transition-colors hover:text-primary">
+                    Signature Dishes
+                </a>
+
+                <a href="#gallery" class="mobile-nav-link block py-1 text-sm font-medium transition-colors hover:text-primary">
+                    Gallery
+                </a>
+
+                <a href="#location" class="mobile-nav-link block py-1 text-sm font-medium transition-colors hover:text-primary">
+                    Location
+                </a>
+
+            </div>
+        </nav>
+    </div>
+
+</nav>

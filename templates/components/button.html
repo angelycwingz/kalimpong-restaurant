@@ -1,0 +1,15 @@
+
+<a
+    href="{{ href }}"
+    {% if target %}target="{{ target }}"{% endif %}
+    {% if target == "_blank" %}rel="noopener noreferrer"{% endif %}
+    class="inline-flex min-h-12 items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-brown
+    {% if variant == 'primary' %}
+        bg-secondary text-brown hover:bg-[#E0B45C]
+    {% else %}
+        border border-white/70 bg-white/5 text-white backdrop-blur-sm hover:border-secondary hover:bg-white/10
+    {% endif %}"
+>
+    {{ label }}
+    <span aria-hidden="true">↗</span>
+</a>

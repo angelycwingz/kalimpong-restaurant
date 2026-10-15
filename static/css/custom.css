@@ -1,0 +1,94 @@
+@theme {
+
+    --color-primary: #6F1D1B;
+
+    --color-secondary: #CEA64B;
+
+    --color-background: #F8F4EE;
+
+    --color-text: #1E1E1E;
+
+    --color-brown: #4B3621;
+
+    --font-heading: 'Cormorant Garamond', serif;
+
+    --font-body: 'Inter', sans-serif;
+
+}
+
+/* Navbar base state: transparent over the hero */
+.site-navbar {
+    border-bottom: 1px solid transparent;
+    transition:
+        background-color 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease;
+}
+
+/* Navbar state after scrolling beyond the hero */
+.site-navbar.is-scrolled {
+    background-color: rgb(248 244 238 / 94%);
+    border-bottom-color: rgb(111 29 27 / 12%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 24px rgb(30 30 30 / 6%);
+}
+
+/* Navigation links */
+.site-navbar .nav-link {
+    color: rgb(255 255 255 / 88%);
+    transition: color 250ms ease;
+}
+
+.site-navbar.is-scrolled .nav-link {
+    color: #4B3621;
+}
+
+/* Brand text */
+.site-navbar .brand-name,
+.site-navbar .brand-subtitle {
+    color: white;
+    transition: color 250ms ease;
+}
+
+.site-navbar.is-scrolled .brand-name {
+    color: #6F1D1B;
+}
+
+.site-navbar.is-scrolled .brand-subtitle {
+    color: #4B3621;
+}
+
+/* mobile menu */
+
+.site-navbar.is-scrolled .mobile-menu-toggle {
+    color: #6F1D1B;
+    border-color: rgb(111 29 27 / 25%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-navbar,
+    .site-navbar .nav-link,
+    .site-navbar .brand-name,
+    .site-navbar .brand-subtitle {
+        transition: none;
+    }
+}
+
+
+/* Smooth scrolling for navigation links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Keep section headings visible below the fixed navbar */
+section[id]:not(#hero) {
+    scroll-margin-top: 1rem;
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

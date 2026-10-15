@@ -1,0 +1,154 @@
+
+<footer
+    id="site-footer"
+    class="relative overflow-hidden bg-primary text-white"
+>
+    <!-- Subtle mountain-line decoration -->
+    <svg
+        aria-hidden="true"
+        class="pointer-events-none absolute right-0 top-0 hidden h-full w-1/2 text-white/6 md:block"
+        viewBox="0 0 600 400"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+    >
+        <path
+            d="M0 330 L95 245 L150 290 L255 125 L340 230 L410 165 L600 315"
+            stroke="currentColor"
+            stroke-width="2"
+        />
+        <path
+            d="M80 400 L220 265 L300 325 L405 225 L515 310 L600 255"
+            stroke="currentColor"
+            stroke-width="2"
+        />
+    </svg>
+
+    <div class="relative mx-auto max-w-7xl px-6 py-14 md:px-8 lg:py-16">
+
+        <!-- Main footer columns -->
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr] lg:gap-16">
+
+            <!-- Brand -->
+            <div>
+                {% include "components/brand.html" with variant="footer" only %}
+
+                <p class="mt-6 max-w-sm text-sm leading-7 text-white/75">
+                    A cozy Tibetan café in the heart of McLeod Ganj,
+                    serving comforting food in a colourful,
+                    welcoming setting.
+                </p>
+
+                <p class="mt-5 text-xs uppercase tracking-[0.18em] text-secondary">
+                    McLeod Ganj · Dharamshala
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
+                    Explore
+                </h2>
+
+                <ul class="mt-5 space-y-3 text-sm text-white/80">
+                    <li>
+                        <a href="#hero" class="transition-colors hover:text-secondary">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#story" class="transition-colors hover:text-secondary">
+                            Our Story
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#menu" class="transition-colors hover:text-secondary">
+                            Signature Dishes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#gallery" class="transition-colors hover:text-secondary">
+                            Gallery
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#location" class="transition-colors hover:text-secondary">
+                            Find Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contact information -->
+            <div>
+                <h2 class="text-xs font-semibold uppercase tracking-[0.2em] text-secondary">
+                    Visit Kalimpong
+                </h2>
+
+                <address class="mt-5 not-italic text-sm leading-7 text-white/80">
+                    Tipa Road, McLeod Ganj<br>
+                    Dharamshala, Himachal Pradesh 176215
+                </address>
+
+                <a
+                    href="tel:+919816743703"
+                    class="mt-4 inline-block text-sm font-medium text-white transition-colors hover:text-secondary"
+                >
+                    098167 43703
+                </a>
+
+                <p class="mt-3 text-sm leading-6 text-white/70">
+                    11 AM – 10 PM<br>
+                    Closed on Wednesdays
+                </p>
+
+                <div class="mt-5 flex flex-wrap gap-4 text-sm">
+                    <a
+                        href="https://maps.google.com/maps?q=Kalimpong%20Restaurant%2068QF%2BGQP%2C%20Tipa%20Road%2C%20McLeod%20Ganj%2C%20Dharamshala%2C%20Himachal%20Pradesh%20176215"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-semibold text-secondary transition-colors hover:text-white"
+                    >
+                        Directions ↗
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/explore/locations/472321275/kalimpong-restaurant-mcleodganj/?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-semibold text-secondary transition-colors hover:text-white"
+                    >
+                        Instagram ↗
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-12 flex flex-col gap-3 border-t border-white/15 pt-6 text-xs leading-6 text-white/60 sm:flex-row sm:items-center sm:justify-between">
+
+            <p>
+                © {% now "Y" %} Kalimpong Restaurant. All rights reserved.
+            </p>
+
+            <p class="text-white/70">
+                Designed &amp; developed by
+                <a
+                    href="tel:+916230229383"
+                    class="ml-1 inline-block font-semibold tracking-wide text-secondary transition-colors duration-300 hover:text-white">
+                    Aditya Tandon
+                </a>
+            </p>
+
+            <a
+                href="#hero"
+                class="w-fit transition-colors duration-400 hover:text-secondary"
+            >
+                Back to the top ↑
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>

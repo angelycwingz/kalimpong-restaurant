@@ -1,0 +1,33 @@
+
+{% load static %}
+
+<a
+    href="#hero"
+    class="inline-flex items-center gap-3 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+    aria-label="Kalimpong Restaurant — back to top"
+>
+    <img
+        src="{% static 'icons/eternal-knot.svg' %}"
+        alt=""
+        aria-hidden="true"
+        class="h-10 w-10 shrink-0"
+    >
+
+    <span class="flex flex-col">
+        {% if variant == "footer" %}
+            <span class="font-heading text-2xl font-semibold leading-none text-white">
+                Kalimpong
+            </span>
+            <span class="mt-1 text-xs uppercase tracking-[0.18em] text-white/70">
+                Restaurant
+            </span>
+        {% else %}
+            <span class="brand-name font-heading text-2xl font-semibold leading-none">
+                Kalimpong
+            </span>
+            <span class="brand-subtitle mt-1 text-xs">
+                Restaurant
+            </span>
+        {% endif %}
+    </span>
+</a>

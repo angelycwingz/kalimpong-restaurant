@@ -1,0 +1,58 @@
+
+<section
+    id="menu"
+    aria-labelledby="menu-title"
+    class="bg-background py-20 text-text sm:py-24 lg:py-28"
+>
+    <div class="mx-auto max-w-7xl px-6 md:px-8">
+
+        <!-- Section heading -->
+        <div data-reveal class="mx-auto max-w-2xl text-center">
+
+            <p class="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-primary">
+                From Our Kitchen
+            </p>
+
+            <h2
+                id="menu-title"
+                class="font-heading text-4xl font-medium leading-tight sm:text-5xl lg:text-6xl"
+            >
+                A Taste of the
+                <span class="italic text-primary">Himalayas</span>
+            </h2>
+
+            <p class="mx-auto mt-5 max-w-xl text-base leading-7 text-brown/80">
+                Discover comforting dishes inspired by Tibetan flavours,
+                served in the warm and welcoming surroundings of McLeod Ganj.
+            </p>
+
+        </div>
+
+        <!-- Dish cards -->
+        <div data-reveal class="mt-12 grid gap-6 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8">
+
+            {% include "components/dish_card.html" with image="images/food/thukpa.jpg" alt="A bowl of thukpa noodle soup" name="Thukpa" tag="Warm & Comforting" description="A hearty noodle soup with vegetables and a savoury broth." only %}
+
+            {% include "components/dish_card.html" with image="images/food/momos.jpg" alt="A plate of Tibetan momos" name="Momos" tag="A Himalayan Favourite" description="Tibetan-style dumplings made for a comforting meal or sharing." only %}
+
+            {% include "components/dish_card.html" with image="images/food/fried-momos.jpg" alt="Golden fried momos served on a plate" name="Fried Momos" tag="Crispy & Delicious" description="Golden dumplings with a crisp exterior and satisfying filling." only %}
+
+        </div>
+
+        <!-- Link to the full published menu -->
+        <div class="mt-12 text-center sm:mt-14">
+
+            <a
+                href="https://www.zomato.com/dharamshala/kalimpong-restaurant-mcleodganj/menu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex min-h-12 items-center justify-center rounded-full border border-primary/30 px-7 py-3 text-sm font-semibold text-primary transition duration-300 hover:border-primary hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+            >
+                Explore the Full Menu
+                <span class="ml-2" aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+    </div>
+</section>

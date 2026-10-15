@@ -1,0 +1,44 @@
+
+{% load static %}
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Kalimpong Restaurant",
+    "url": "{{ request.scheme }}://{{ request.get_host }}{{ request.path }}",
+    "image": "{{ request.scheme }}://{{ request.get_host }}{% static 'images/story/restaurant-interior.jpg' %}",
+    "telephone": "+919816743703",
+    "priceRange": "₹200–₹400 per person",
+    "servesCuisine": ["Tibetan"],
+    "acceptsReservations": false,
+    "hasMenu": "https://www.zomato.com/dharamshala/kalimpong-restaurant-mcleodganj/menu",
+    "sameAs": [
+        "https://www.zomato.com/dharamshala/kalimpong-restaurant-mcleodganj/menu",
+        "https://www.instagram.com/explore/locations/472321275/kalimpong-restaurant-mcleodganj/?hl=en"
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "68QF+GQP, Tipa Road",
+        "addressLocality": "McLeod Ganj, Dharamshala",
+        "addressRegion": "Himachal Pradesh",
+        "postalCode": "176215",
+        "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "opens": "11:00",
+            "closes": "22:00"
+        }
+    ]
+}
+</script>

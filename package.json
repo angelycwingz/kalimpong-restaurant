@@ -1,0 +1,33 @@
+{
+  "name": "kalimpong-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch",
+    "build:css": "tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify",
+    "dev:js": "esbuild frontend/js/site-animations.js --bundle --outfile=static/js/site-animations.bundle.js --watch",
+    "build:js": "esbuild frontend/js/site-animations.js --bundle --minify --outfile=static/js/site-animations.bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelycwingz/kalimpong-restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/angelycwingz/kalimpong-restaurant/issues"
+  },
+  "homepage": "https://github.com/angelycwingz/kalimpong-restaurant#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
+  }
+}

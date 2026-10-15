@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Kalimpong Restaurant
+        {% endblock title %}
+    </title>
+
+    <link rel="stylesheet" href="{% static "css/output.css" %}">
+
+    {% comment %} <link rel="preload" as="image" href="images/hero/hero-mountains.webp" type="image/webp"> {% endcomment %}
+
+    <link
+    rel="preload"
+    as="image"
+    href="{% static 'images/hero/hero-mountains-mobile.webp' %}"
+    type="image/webp"
+    media="(max-width: 767px)"
+    fetchpriority="high"
+    >
+
+    <link
+    rel="preload"
+    as="image"
+    href="{% static 'images/hero/hero-mountains-optimized.webp' %}"
+    type="image/webp"
+    media="(min-width: 768px)"
+    fetchpriority="high"
+    >
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- Browser and search metadata -->
+    <meta
+        name="description"
+        content="Discover Kalimpong Restaurant in McLeod Ganj, Dharamshala. Explore Tibetan-inspired comfort food, colourful interiors, opening hours and directions."
+    >
+
+    <meta name="theme-color" content="#6F1D1B">
+
+    <!-- Browser tab icon: our Eternal Knot logo -->
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="{% static 'icons/eternal-knot.svg' %}"
+    >
+
+    <!-- Social sharing preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kalimpong Restaurant">
+    <meta
+        property="og:title"
+        content="Kalimpong Restaurant | Tibetan Cuisine in McLeod Ganj"
+    >
+    <meta
+        property="og:description"
+        content="Discover a cozy Tibetan café in the hills of McLeod Ganj, Dharamshala."
+    >
+    <meta
+        property="og:image"
+        content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/story/restaurant-interior.jpg' %}"
+    >
+    <meta
+        property="og:url"
+        content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}"
+    >
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+        name="twitter:title"
+        content="Kalimpong Restaurant | Tibetan Cuisine in McLeod Ganj"
+    >
+    <meta
+        name="twitter:description"
+        content="Explore Tibetan-inspired food and the welcoming atmosphere of Kalimpong Restaurant."
+    >
+
+    {% block structured_data %}{% endblock %}
+
+</head>
+
+<body class="bg-background text-text">
+
+    {% include "components/navbar.html" %}
+
+    <main>
+
+        {% block content %}
+        {% endblock content %}
+
+    </main>
+
+    <!--JS to change Navbar State on scrolling-->
+    <script src="{% static 'js/navbar.js' %}" defer></script>
+    <script src="{% static 'js/site-animations.bundle.js' %}" defer></script>
+    {% block js %}
+    {% endblock js %}
+
+
+</body>
+
+</html>
