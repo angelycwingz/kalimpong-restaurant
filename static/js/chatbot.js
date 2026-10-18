@@ -162,7 +162,28 @@ document.addEventListener("DOMContentLoaded", () => {
                 }),
             });
 
-            const data = await response.json();
+            const contentType = response.headers.get("content-type") || "";
+            let data;
+
+            if (contentType.includes("application/json")) {
+                data = await response.json();
+            } else {
+                const body = await response.text();
+
+                console.error(
+                    "Chatbot API returned a non-JSON response:",
+                    {
+                        status: response.status,
+                        contentType,
+                        body: body.slice(0, 1000),
+                    }
+                );
+
+                throw new Error(
+                    `The chatbot server returned an unexpected response ` +
+                    `(HTTP ${response.status}). Check the Render logs.`
+                );
+            }
 
             if (!response.ok) {
                 throw new Error(
