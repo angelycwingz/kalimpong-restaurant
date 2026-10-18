@@ -1,0 +1,327 @@
+
+.restaurant-chatbot {
+    --chat-maroon: #6f1d1b;
+    --chat-gold: #d6ad60;
+    --chat-cream: #fffaf0;
+    --chat-ink: #30231f;
+
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1000;
+    font-family: Inter, sans-serif;
+}
+
+.chatbot-toggle {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    padding: 5px;
+    overflow: hidden;
+    border: 2px solid var(--chat-gold);
+    border-radius: 50%;
+    background: var(--chat-cream);
+    box-shadow: 0 6px 24px rgb(48 35 31 / 20%);
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgb(48 35 31 / 25%);
+}
+
+.chatbot-avatar,
+.chatbot-header-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.chatbot-panel {
+    position: absolute;
+    right: 0;
+    bottom: 92px;
+    display: flex;
+    flex-direction: column;
+    width: min(370px, calc(100vw - 32px));
+    height: min(520px, calc(100dvh - 140px));
+    overflow: hidden;
+    border: 1px solid rgb(111 29 27 / 12%);
+    border-radius: 20px;
+    background: var(--chat-cream);
+    color: var(--chat-ink);
+    box-shadow: 0 16px 55px rgb(48 35 31 / 20%);
+    animation: chatbot-enter 180ms ease-out;
+}
+
+.chatbot-panel[hidden] {
+    display: none;
+}
+
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: var(--chat-maroon);
+    color: white;
+}
+
+.chatbot-header-avatar {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    padding: 2px;
+    border-radius: 50%;
+    background: var(--chat-cream);
+}
+
+.chatbot-heading {
+    flex: 1;
+    min-width: 0;
+}
+
+.chatbot-heading h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.chatbot-heading p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.chatbot-close {
+    align-self: flex-start;
+    padding: 0 4px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.chatbot-messages {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.chatbot-message {
+    max-width: 88%;
+    padding: 11px 13px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    text-align: left;
+}
+
+#restaurant-chatbot .chatbot-message--bot {
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 88%;
+    border-bottom-left-radius: 4px;
+    background: #f0e7d8;
+    text-align: left;
+    word-break: normal;
+}
+
+.chatbot-message--user {
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    background: var(--chat-maroon);
+    color: white;
+}
+
+.chatbot-quick-replies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0 12px 12px;
+}
+
+.chatbot-quick-replies button {
+    padding: 8px 10px;
+    border: 1px solid #e1cfae;
+    border-radius: 20px;
+    background: white;
+    color: var(--chat-maroon);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.chatbot-quick-replies button:hover {
+    background: #f4ead9;
+}
+
+.chatbot-form {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-top: 1px solid #eadfce;
+}
+
+.chatbot-form input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid #dfd1bf;
+    border-radius: 12px;
+    background: white;
+    color: var(--chat-ink);
+    font: inherit;
+    font-size: 14px;
+}
+
+.chatbot-form input:focus {
+    outline: 2px solid var(--chat-gold);
+    outline-offset: 1px;
+}
+
+.chatbot-form button {
+    width: 44px;
+    flex: 0 0 44px;
+    border: 0;
+    border-radius: 12px;
+    background: var(--chat-maroon);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chatbot-disclaimer {
+    margin: 0;
+    padding: 0 12px 10px;
+    color: #75665c;
+    text-align: center;
+    font-size: 10px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes chatbot-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-chatbot {
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .chatbot-toggle {
+        width: 66px;
+        height: 66px;
+    }
+
+    .chatbot-panel {
+        bottom: 78px;
+        width: calc(100vw - 28px);
+        height: min(500px, calc(100dvh - 110px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chatbot-toggle,
+    .chatbot-panel {
+        animation: none;
+        transition: none;
+    }
+}
+
+#restaurant-chatbot .chatbot-inline-link {
+    color: var(--chat-maroon);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--chat-gold);
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+#restaurant-chatbot .chatbot-inline-link:focus-visible {
+    outline: 2px solid var(--chat-gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+
+/* Formatted assistant messages */
+#restaurant-chatbot .chatbot-message--bot p {
+    margin: 0 0 0.65rem;
+}
+
+#restaurant-chatbot .chatbot-message--bot > :last-child {
+    margin-bottom: 0;
+}
+
+#restaurant-chatbot .chatbot-message--bot ul,
+#restaurant-chatbot .chatbot-message--bot ol {
+    margin: 0.4rem 0 0.75rem;
+    padding-left: 1.25rem;
+}
+
+#restaurant-chatbot .chatbot-message--bot li {
+    margin: 0.25rem 0;
+}
+
+#restaurant-chatbot .chatbot-message--bot strong {
+    font-weight: 700;
+}
+
+#restaurant-chatbot .chatbot-message--bot a {
+    color: var(--chat-maroon);
+    text-decoration: underline;
+    text-decoration-color: var(--chat-gold);
+    text-underline-offset: 3px;
+    overflow-wrap: anywhere;
+}
+
+#restaurant-chatbot .chatbot-message--bot table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+}
+
+#restaurant-chatbot .chatbot-message--bot th,
+#restaurant-chatbot .chatbot-message--bot td {
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #dfd1bf;
+    text-align: left;
+    vertical-align: top;
+}
+
+#restaurant-chatbot .chatbot-message--bot th {
+    background: #f0e7d8;
+    font-weight: 700;
+}

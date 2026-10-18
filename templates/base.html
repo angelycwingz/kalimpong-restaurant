@@ -11,6 +11,7 @@
     </title>
 
     <link rel="stylesheet" href="{% static "css/output.css" %}">
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
 
     {% comment %} <link rel="preload" as="image" href="images/hero/hero-mountains.webp" type="image/webp"> {% endcomment %}
 
@@ -104,9 +105,11 @@
     <script src="{% static 'js/navbar.js' %}" defer></script>
     <script src="{% static 'js/gallery-lightbox.js' %}" defer></script>
     <script src="{% static 'js/site-animations.bundle.js' %}" defer></script>
+
+    {% include "components/chatbot.html" %}
+    <script src="{% static 'js/chatbot.js' %}" defer></script>
     {% block js %}
     {% endblock js %}
-
 
 </body>
 

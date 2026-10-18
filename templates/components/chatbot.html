@@ -1,0 +1,100 @@
+
+{% load static %}
+
+<div id="restaurant-chatbot" class="restaurant-chatbot">
+    <button
+        id="chatbot-toggle"
+        class="chatbot-toggle"
+        type="button"
+        aria-label="Open restaurant assistant"
+        aria-expanded="false"
+        aria-controls="chatbot-panel"
+    >
+        <img
+            src="{% static 'images/chatbot/momos-assistant.png' %}"
+            alt=""
+            class="chatbot-avatar"
+        >
+    </button>
+
+    <section
+        id="chatbot-panel"
+        class="chatbot-panel"
+        role="dialog"
+        aria-label="Kalimpong Restaurant Assistant"
+        aria-modal="false"
+        hidden
+    >
+        <header class="chatbot-header">
+            <img
+                src="{% static 'images/chatbot/momos-assistant.png' %}"
+                alt=""
+                class="chatbot-header-avatar"
+            >
+
+            <div class="chatbot-heading">
+                <h2>Kalimpong Assistant</h2>
+                <p>Your little momos helper</p>
+            </div>
+
+            <button
+                id="chatbot-close"
+                class="chatbot-close"
+                type="button"
+                aria-label="Close chat"
+            >
+                &times;
+            </button>
+        </header>
+
+        <div
+            id="chatbot-messages"
+            class="chatbot-messages"
+            aria-live="polite"
+            aria-relevant="additions"
+        >
+            
+            <div class="chatbot-message chatbot-message--bot">Hey there! 🥟 Welcome to Kalimpong Restaurant. What would you like to know about us?</div>
+
+        </div>
+
+        <div class="chatbot-quick-replies" aria-label="Suggested questions">
+            <button type="button" data-chat-question="Where is the restaurant?">
+                📍 Location
+            </button>
+
+            <button type="button" data-chat-question="What are your opening hours?">
+                🕒 Opening hours
+            </button>
+
+            <button type="button" data-chat-question="Where can I find your menu?">
+                🍜 Menu
+            </button>
+        </div>
+
+        <form id="chatbot-form" class="chatbot-form" data-chatbot-endpoint="{% url 'chatbot_api' %}">
+            {% csrf_token %}
+            <label class="visually-hidden" for="chatbot-input" >
+                Ask a restaurant question
+            </label>
+
+            <input
+                id="chatbot-input"
+                name="message"
+                type="text"
+                placeholder="Ask us something..."
+                maxlength="500"
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" aria-label="Send message">
+                <span aria-hidden="true">➤</span>
+            </button>
+        </form>
+
+        <p class="chatbot-disclaimer">
+            Restaurant questions only Please.
+        </p>
+    </section>
+</div>
