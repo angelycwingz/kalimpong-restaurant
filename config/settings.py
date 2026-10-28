@@ -27,10 +27,12 @@ load_dotenv(BASE_DIR / ".env")
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-DEBUG = os.environ.get(
-    "DJANGO_DEBUG",
-    "False" if os.environ.get("RENDER") else "True",
-).strip().lower() in {"true", "1", "yes", "on"}
+# DEBUG = os.environ.get(
+#     "DJANGO_DEBUG",
+#     "False" if os.environ.get("RENDER") else "True",
+# ).strip().lower() in {"true", "1", "yes", "on"}
+
+DEBUG = os.environ.get("DJANGO_DEBUG", "False")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
@@ -46,25 +48,25 @@ if not SECRET_KEY:
             "DJANGO_SECRET_KEY must be configured in production."
         )
 
-# ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "https://kalimpong-restaurant.onrender.com"]
 
 # Allow explicitly configured hosts, or detect Render's assigned hostname.
-_hosts_setting = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
+# _hosts_setting = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
 
-if _hosts_setting:
-    ALLOWED_HOSTS = [
-        host.strip()
-        for host in _hosts_setting.split(",")
-        if host.strip()
-    ]
-elif DEBUG:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
-elif os.environ.get("RENDER_EXTERNAL_HOSTNAME"):
-    ALLOWED_HOSTS = [os.environ["RENDER_EXTERNAL_HOSTNAME"]]
-else:
-    raise RuntimeError(
-        "DJANGO_ALLOWED_HOSTS must be configured in production."
-    )
+# if _hosts_setting:
+#     ALLOWED_HOSTS = [
+#         host.strip()
+#         for host in _hosts_setting.split(",")
+#         if host.strip()
+#     ]
+# elif DEBUG:
+#     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+# elif os.environ.get("RENDER_EXTERNAL_HOSTNAME"):
+#     ALLOWED_HOSTS = [os.environ["RENDER_EXTERNAL_HOSTNAME"]]
+# else:
+#     raise RuntimeError(
+#         "DJANGO_ALLOWED_HOSTS must be configured in production."
+#     )
 
 # Production security settings
 # Render terminates HTTPS at its proxy before forwarding
