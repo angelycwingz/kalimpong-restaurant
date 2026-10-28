@@ -48,7 +48,7 @@ if not SECRET_KEY:
             "DJANGO_SECRET_KEY must be configured in production."
         )
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "kalimpong-restaurant.onrender.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "kalimpong-restaurant.onrender.com", "kalimpong-restaurant-sooty.vercel.app"]
 
 # Allow explicitly configured hosts, or detect Render's assigned hostname.
 # _hosts_setting = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
