@@ -50,6 +50,11 @@ if not SECRET_KEY:
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "kalimpong-restaurant.onrender.com", "kalimpong-restaurant-sooty.vercel.app"]
 
+vercel_url = os.environ.get("VERCEL_URL", "").strip()
+
+if vercel_url:
+    ALLOWED_HOSTS.append(vercel_url.removeprefix("https://").removeprefix("http://"))
+
 # Allow explicitly configured hosts, or detect Render's assigned hostname.
 # _hosts_setting = os.environ.get("DJANGO_ALLOWED_HOSTS", "").strip()
 
