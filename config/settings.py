@@ -32,7 +32,7 @@ load_dotenv(BASE_DIR / ".env")
 #     "False" if os.environ.get("RENDER") else "True",
 # ).strip().lower() in {"true", "1", "yes", "on"}
 
-DEBUG = os.environ.get("DJANGO_DEBUG", "False")
+DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() == "true"
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
