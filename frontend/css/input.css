@@ -2,4 +2,4 @@
 
 @source "../../templates/**/*.html";
 
-@import "./custom.css";
+@import "../../static/css/custom.css";
